@@ -52,19 +52,30 @@
 
               <div class="is-size-5 publication-authors">
                 <div>
-                  <a href="https://chenhn02.github.io/">Haonan Chen</a>*,
-                  <a href="https://chenhn02.github.io/">Junxiao Li</a>*,
-                  <a href="https://warshallrho.github.io/">Ruihai Wu</a>,
-                  <a href="https://chenhn02.github.io/">Yiwei Liu</a>,
-                  <a href="https://houyiwen.github.io/">Yiwen Hou</a>,
-                  <a href="https://ariszxxu.github.io/">Zhixuan Xu</a>,
-                  <a href="https://borisguo6.github.io/">Jingxiang Guo</a>,
-                  <a href="https://chongkaigao.com/">Chongkai Gao</a>,
-                  <a href="https://zhenyuwei2003.github.io/">Zhenyu Wei</a>,
-                  <a href="https://chenhn02.github.io/">Shensi Xu</a>,
-                  <a href="https://chenhn02.github.io/">Jiaqi Huang</a>,
-                  <a href="https://linsats.github.io/">Lin Shao</a>
+                  <a href="https://chenhn02.github.io/">Haonan Chen</a><sup>1,2*</sup>,
+                  <a href="https://chenhn02.github.io/">Junxiao Li</a><sup>3*</sup>,
+                  <a href="https://warshallrho.github.io/">Ruihai Wu</a><sup>4</sup>,
+                  <a href="https://chenhn02.github.io/">Yiwei Liu</a><sup>1</sup>,
+                  <a href="https://houyiwen.github.io/">Yiwen Hou</a><sup>1</sup>,
+                  <a href="https://ariszxxu.github.io/">Zhixuan Xu</a><sup>1</sup>,
+                  <a href="https://borisguo6.github.io/">Jingxiang Guo</a><sup>1</sup>,
+                  <a href="https://chongkaigao.com/">Chongkai Gao</a><sup>1</sup>,
+                  <a href="https://zhenyuwei2003.github.io/">Zhenyu Wei</a><sup>5</sup>,
+                  <a href="https://chenhn02.github.io/">Shensi Xu</a><sup>3</sup>,
+                  <a href="https://chenhn02.github.io/">Jiaqi Huang</a><sup>3</sup>,
+                  <a href="https://linsats.github.io/">Lin Shao</a><sup>1,2</sup>
                 </div>
+              </div>
+
+              <div class="is-size-6 publication-affiliations" style="margin-top: 0.5em;">
+                <p>
+                  <sup>1</sup> School of Computing, National University of Singapore <br>
+                  <sup>2</sup> NUS Guangzhou Research Translation and Innovation Institute <br>
+                  <sup>3</sup> School of Computer Science, Nanjing University <br>
+                  <sup>4</sup> School of Computer Science, Peking University <br>
+                  <sup>5</sup> School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University <br>
+                  <sup>*</sup> denotes equal contribution
+                </p>
               </div>
 
               <div class="column has-text-centered">
@@ -153,18 +164,20 @@ constraining their generalizability across diverse garment categories. This pape
 
 
         <!-- Overview -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Pipeline Overview</h2>
-            <div class="content has-text-justified">
-              <figure>
-                <img src="./static/data/MetaFold_overview.png" alt="Overview of MetaFold framework image">
-                <figcaption style="font-style: normal; font-size: 0.95em;"> Overview: The folding trajectory data for clothing is generated using heuristic methods in the DiffClothAI simulation environment, with language
-                  descriptions subsequently added (Green). The trajectory generation model takes a point cloud from any given frame and a corresponding language
-                  description as inputs to generate the subsequent trajectory (Orange). The generated trajectory is fed into the ManiFoundation model to estimate contact
-                  points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop (Blue).
-                  </figcaption>
-              </figure>
+        <div class="container is-max-desktop">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Pipeline Overview</h2>
+              <div class="content has-text-justified">
+                <figure>
+                  <img src="./static/data/MetaFold_overview.png" alt="Overview of MetaFold framework image">
+                  <figcaption style="font-style: normal; font-size: 0.95em;"> Overview: The folding trajectory data for clothing is generated using heuristic methods in the DiffClothAI simulation environment, with language
+                    descriptions subsequently added <b>(Green)</b>. The trajectory generation model takes a point cloud from any given frame and a corresponding language
+                    description as inputs to generate the subsequent trajectory <b>(Orange)</b>. The generated trajectory is fed into the ManiFoundation model to estimate contact
+                    points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop <b>(Blue)</b>.
+                    </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
@@ -174,17 +187,20 @@ constraining their generalizability across diverse garment categories. This pape
 
     <!-- BibTex -->
     <section class="section" id="BibTeX">
-      <h2 class="title is-3">BibTeX</h2>
-      <pre> <code>
-      @misc{chen2025metafoldlanguageguidedmulticategorygarment,
-        title={MetaFold: Language-Guided Multi-Category Garment Folding Framework via Trajectory Generation and Foundation Model}, 
-        author={Haonan Chen and Junxiao Li and Ruihai Wu and Yiwei Liu and Yiwen Hou and Zhixuan Xu and Jingxiang Guo and Chongkai Gao and Zhenyu Wei and Shensi Xu and Jiaqi Huang and Lin Shao},
-        year={2025},
-        eprint={2503.08372},
-        archivePrefix={arXiv},
-        primaryClass={cs.RO},
-        url={https://arxiv.org/abs/2503.08372}, 
-  }</code></pre>
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre> <code>
+            @misc{chen2025metafoldlanguageguidedmulticategorygarment,
+              title={MetaFold: Language-Guided Multi-Category Garment Folding Framework via Trajectory Generation and Foundation Model}, 
+              author={Haonan Chen and Junxiao Li and Ruihai Wu and Yiwei Liu and Yiwen Hou and Zhixuan Xu and Jingxiang Guo and Chongkai Gao and Zhenyu Wei and Shensi Xu and Jiaqi Huang and Lin Shao},
+              year={2025},
+              eprint={2503.08372},
+              archivePrefix={arXiv},
+              primaryClass={cs.RO},
+              url={https://arxiv.org/abs/2503.08372}, 
+        }</code></pre>
+      </div>
+      
     </section>
     <!--/ BibTex -->
 
