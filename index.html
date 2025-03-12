@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/image/favicon.png">
+    <link rel="icon" href="./static/data/icon_clothes.png">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -52,8 +52,8 @@
 
               <div class="is-size-5 publication-authors">
                 <div>
-                  <a href="https://chenhn02.github.io/">Haonan Chen</a><sup>1,2*</sup>,
-                  <a href="https://chenhn02.github.io/">Junxiao Li</a><sup>3*</sup>,
+                  <a href="https://chenhn02.github.io/">Haonan Chen</a><sup>*1, 2</sup>,
+                  <a href="https://chenhn02.github.io/">Junxiao Li</a><sup>*3</sup>,
                   <a href="https://warshallrho.github.io/">Ruihai Wu</a><sup>4</sup>,
                   <a href="https://chenhn02.github.io/">Yiwei Liu</a><sup>1</sup>,
                   <a href="https://houyiwen.github.io/">Yiwen Hou</a><sup>1</sup>,
@@ -63,18 +63,19 @@
                   <a href="https://zhenyuwei2003.github.io/">Zhenyu Wei</a><sup>5</sup>,
                   <a href="https://chenhn02.github.io/">Shensi Xu</a><sup>3</sup>,
                   <a href="https://chenhn02.github.io/">Jiaqi Huang</a><sup>3</sup>,
-                  <a href="https://linsats.github.io/">Lin Shao</a><sup>1,2</sup>
+                  <a href="https://linsats.github.io/">Lin Shao</a><sup>&dagger;1, 2</sup>
                 </div>
               </div>
 
-              <div class="is-size-6 publication-affiliations" style="margin-top: 0.5em;">
+              <div class="is-size-5 publication-affiliations" style="margin-top: 0.4em;">
                 <p>
                   <sup>1</sup> School of Computing, National University of Singapore <br>
                   <sup>2</sup> NUS Guangzhou Research Translation and Innovation Institute <br>
                   <sup>3</sup> School of Computer Science, Nanjing University <br>
                   <sup>4</sup> School of Computer Science, Peking University <br>
                   <sup>5</sup> School of Electronic Information and Electrical Engineering, Shanghai Jiao Tong University <br>
-                  <sup>*</sup> denotes equal contribution
+                  <sup>*</sup> denotes equal contribution <br>
+                  <sup>&dagger;</sup> corresponding author
                 </p>
               </div>
 
@@ -154,8 +155,8 @@
             <div class="content has-text-justified">
               <p>
                 Garment folding is a common yet challenging task in robotic manipulation. The deformability of garments leads to a vast state space and complex dynamics and complicates precise fine-grained manipulation.
-Previous approaches often rely on predefined key points or demonstrations,
-constraining their generalizability across diverse garment categories. This paper presents a framework, \textbf{MetaFold}, that disentangles task planning from action prediction, learning each independently to enhance model generalization. It employs language-guided point cloud trajectory generation for task planning and a low-level foundation model for action prediction. This structure facilitates multi-category learning, enabling the model to adapt flexibly to various user instructions and folding tasks. Experimental results  demonstrate our proposed framework's superiority. 
+                Previous approaches often rely on predefined key points or demonstrations,
+                constraining their generalizability across diverse garment categories. This paper presents a framework, <b>MetaFold</b>, that disentangles task planning from action prediction, learning each independently to enhance model generalization. It employs language-guided point cloud trajectory generation for task planning and a low-level foundation model for action prediction. This structure facilitates multi-category learning, enabling the model to adapt flexibly to various user instructions and folding tasks. Experimental results  demonstrate our proposed framework's superiority. 
               </p>
             </div>
           </div>
@@ -164,23 +165,23 @@ constraining their generalizability across diverse garment categories. This pape
 
 
         <!-- Overview -->
-        <div class="container is-max-desktop">
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Pipeline Overview</h2>
-              <div class="content has-text-justified">
-                <figure>
-                  <img src="./static/data/MetaFold_overview.png" alt="Overview of MetaFold framework image">
-                  <figcaption style="font-style: normal; font-size: 0.95em;"> Overview: The folding trajectory data for clothing is generated using heuristic methods in the DiffClothAI simulation environment, with language
-                    descriptions subsequently added <b>(Green)</b>. The trajectory generation model takes a point cloud from any given frame and a corresponding language
-                    description as inputs to generate the subsequent trajectory <b>(Orange)</b>. The generated trajectory is fed into the ManiFoundation model to estimate contact
-                    points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop <b>(Blue)</b>.
-                    </figcaption>
-                </figure>
-              </div>
+        <!-- <div class="container is-max-desktop"> -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Pipeline Overview</h2>
+            <div class="content has-text-justified">
+              <figure>
+                <img src="./static/data/MetaFold_overview.png" alt="Overview of MetaFold framework image" style="max-width: 100%;">
+                <figcaption style="font-style: normal; font-size: 0.95em; text-align: left;"> Overview: The folding trajectory data for clothing is generated using heuristic methods in the DiffClothAI simulation environment, with language
+                  descriptions subsequently added <b>(Green)</b>. The trajectory generation model takes a point cloud from any given frame and a corresponding language
+                  description as inputs to generate the subsequent trajectory <b>(Orange)</b>. The generated trajectory is fed into the ManiFoundation model to estimate contact
+                  points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop <b>(Blue)</b>.
+                  </figcaption>
+              </figure>
             </div>
           </div>
         </div>
+        <!-- </div> -->
         <!--/ Overview -->
       </div>
     </section>
