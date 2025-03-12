@@ -160,9 +160,9 @@ constraining their generalizability across diverse garment categories. This pape
               <figure>
                 <img src="./static/data/MetaFold_overview.png" alt="Overview of MetaFold framework image">
                 <figcaption style="font-style: normal; font-size: 0.95em;"> Overview: The folding trajectory data for clothing is generated using heuristic methods in the DiffClothAI simulation environment, with language
-                  descriptions subsequently added (Green). The trajectory generation model takes a point cloud from any given frame and a corresponding language
-                  description as inputs to generate the subsequent trajectory (Orange). The generated trajectory is fed into the ManiFoundation model to estimate contact
-                  points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop (Blue).
+                  descriptions subsequently added <b>(Green)</b>. The trajectory generation model takes a point cloud from any given frame and a corresponding language
+                  description as inputs to generate the subsequent trajectory <b>(Orange)</b>. The generated trajectory is fed into the ManiFoundation model to estimate contact
+                  points and force directions, enabling the robot to conduct garment folding actions. This process is then iteratively refined using a feedback loop <b>(Blue)</b>.
                   </figcaption>
               </figure>
             </div>
@@ -175,7 +175,11 @@ constraining their generalizability across diverse garment categories. This pape
     <!-- BibTex -->
     <section class="section" id="BibTeX">
       <h2 class="title is-3">BibTeX</h2>
-      <pre> <code>
+      <pre  style="
+      margin: 0 2rem;            /* 左右留 2rem 空白，可根据需要调大或调小 */
+      background-color: #f9f9f9; /* 浅灰色背景 */
+      padding: 1rem;            /* 内边距，让文字不贴边 */
+      "> <code>
       @misc{chen2025metafoldlanguageguidedmulticategorygarment,
         title={MetaFold: Language-Guided Multi-Category Garment Folding Framework via Trajectory Generation and Foundation Model}, 
         author={Haonan Chen and Junxiao Li and Ruihai Wu and Yiwei Liu and Yiwen Hou and Zhixuan Xu and Jingxiang Guo and Chongkai Gao and Zhenyu Wei and Shensi Xu and Jiaqi Huang and Lin Shao},
