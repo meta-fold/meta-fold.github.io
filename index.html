@@ -36,7 +36,7 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <!-- model-viewer -->
-    <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script> -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   </head>
 
 
@@ -191,6 +191,273 @@
         </div>
       </div>
       <!--/ Overview -->
+    </section>
+
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">MetaFold Dataset Visualization</h2>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                We present visualizations of several garment folding trajectories from the MetaFold Dataset. These garments include NoSleeve, ShortSleeve, LongSleeve, and Pants. 
+                
+                Each row contains three different garments; dragging the slider beneath a garment reveals its folding process. Selecting the action on the right side of each row visualizes the subsequent folding stages. NoSleeve has only one folding stage, ShortSleeve and LongSleeve each have three stages, and Pants has two stages.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- No-Sleeve Row -->
+        <div class="garment-row" style="margin-bottom: 40px;">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 20px; color: #66c0ff;">No-Sleeve</h3>
+          <div class="columns is-centered has-text-centered">
+            <!-- No-Sleeve Garment 1 -->
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="nosleeve1" src="static/data/NoSleeve/DSNS_Dress115/DSNS_Dress115_action0/frame_00.glb" alt="No-Sleeve 1" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">No-Sleeve 1</p>
+              <input type="range" class="frame-slider" data-garment="nosleeve1" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <!-- No-Sleeve Garment 2 -->
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="nosleeve2" src="static/data/NoSleeve/TNNC_Top229/TNNC_Top229_action0/frame_00.glb" alt="No-Sleeve 2" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">No-Sleeve 2</p>
+              <input type="range" class="frame-slider" data-garment="nosleeve2" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <!-- No-Sleeve Garment 3 -->
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="nosleeve3" src="static/data/NoSleeve/DLNS_Dress016/DLNS_Dress016_action0/frame_00.glb" alt="No-Sleeve 3" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #66c0ff; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">No-Sleeve 3</p>
+              <input type="range" class="frame-slider" data-garment="nosleeve3" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <!-- Action Selector for No-Sleeve -->
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 180px;">
+              <label style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #66c0ff;">Action:</label>
+              <select class="action-selector" data-garment-type="nosleeve" style="padding: 12px 20px; font-size: 18px; border-radius: 8px; border: 2px solid #66c0ff; background-color: white; min-width: 120px;">
+                <option value="0">Action 0</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Short-Sleeve Row -->
+        <div class="garment-row" style="margin-bottom: 40px;">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 20px; color: #FF8C42;">Short-Sleeve</h3>
+          <div class="columns is-centered has-text-centered">
+            <!-- Short-Sleeve Garment 1 -->
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="shortsleeve1" src="static/data/ShortSleeve/TNSC_089/TNSC_089_action0/frame_00.glb" alt="Short-Sleeve 1" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #FF8C42; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Short-Sleeve 1</p>
+              <input type="range" class="frame-slider" data-garment="shortsleeve1" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="shortsleeve2" src="static/data/ShortSleeve/TNSC_model2_076/TNSC_model2_076_action0/frame_00.glb" alt="Short-Sleeve 2" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #FF8C42; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Short-Sleeve 2</p>
+              <input type="range" class="frame-slider" data-garment="shortsleeve2" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="shortsleeve3" src="static/data/ShortSleeve/TNSC_Top511/TNSC_Top511_action0/frame_00.glb" alt="Short-Sleeve 3" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #FF8C42; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Short-Sleeve 3</p>
+              <input type="range" class="frame-slider" data-garment="shortsleeve3" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 180px;">
+              <label style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #FF8C42;">Action:</label>
+              <select class="action-selector" data-garment-type="shortsleeve" style="padding: 12px 20px; font-size: 18px; border-radius: 8px; border: 2px solid #FF8C42; background-color: white; min-width: 120px;">
+                <option value="0">Action 0</option>
+                <option value="1">Action 1</option>
+                <option value="2">Action 2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Long-Sleeve Row -->
+        <div class="garment-row" style="margin-bottom: 40px;">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 20px; color: #4ECDC4;">Long-Sleeve</h3>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="longsleeve1" src="static/data/LongSleeve/TCLC_023/TCLC_023_action0/frame_00.glb" alt="Long-Sleeve 1" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #4ECDC4; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Long-Sleeve 1</p>
+              <input type="range" class="frame-slider" data-garment="longsleeve1" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="longsleeve2" src="static/data/LongSleeve/TCLC_Top073/TCLC_Top073_action0/frame_00.glb" alt="Long-Sleeve 2" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #4ECDC4; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Long-Sleeve 2</p>
+              <input type="range" class="frame-slider" data-garment="longsleeve2" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="longsleeve3" src="static/data/LongSleeve/TNLC_shirt2/TNLC_shirt2_action0/frame_00.glb" alt="Long-Sleeve 3" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #4ECDC4; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Long-Sleeve 3</p>
+              <input type="range" class="frame-slider" data-garment="longsleeve3" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 180px;">
+              <label style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #4ECDC4;">Action:</label>
+              <select class="action-selector" data-garment-type="longsleeve" style="padding: 12px 20px; font-size: 18px; border-radius: 8px; border: 2px solid #4ECDC4; background-color: white; min-width: 120px;">
+                <option value="0">Action 0</option>
+                <option value="1">Action 1</option>
+                <option value="2">Action 2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pants Row -->
+        <div class="garment-row" style="margin-bottom: 40px;">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 20px; color: #A569BD;">Pants</h3>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="pants1" src="static/data/Pants/PL_028/PL_028_action0/frame_00.glb" alt="Pants 1" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #A569BD; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Pants 1</p>
+              <input type="range" class="frame-slider" data-garment="pants1" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="pants2" src="static/data/Pants/PL_032/PL_032_action0/frame_00.glb" alt="Pants 2" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #A569BD; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Pants 2</p>
+              <input type="range" class="frame-slider" data-garment="pants2" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center;">
+              <model-viewer id="pants3" src="static/data/Pants/PS_009/PS_009_action0/frame_00.glb" alt="Pants 3" camera-controls="" auto-rotate="" auto-rotate-delay="3000" style="width: 200px; height: 200px; border: 3px solid #A569BD; border-radius: 15px;">
+              </model-viewer>
+              <p style="font-size: 18px; font-weight: bold; margin: 10px 0 5px 0;">Pants 3</p>
+              <input type="range" class="frame-slider" data-garment="pants3" min="0" max="20" value="0" style="width: 150px; height: 15px;">
+              <span class="frame-display" style="font-size: 12px; color: #666;">00/20</span>
+            </div>
+            
+            <div class="column is-one-quarter" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 180px;">
+              <label style="font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #A569BD;">Action:</label>
+              <select class="action-selector" data-garment-type="pants" style="padding: 12px 20px; font-size: 18px; border-radius: 8px; border: 2px solid #A569BD; background-color: white; min-width: 120px;">
+                <option value="0">Action 0</option>
+                <option value="1">Action 1</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Update individual model viewer based on frame slider
+        function updateIndividualViewer(garmentId, frame, action) {
+          const paddedFrame = frame.toString().padStart(2, '0');
+          const viewer = document.getElementById(garmentId);
+          
+          // Define the mapping for each garment
+          const garmentMapping = {
+            'nosleeve1': 'NoSleeve/DSNS_Dress115/DSNS_Dress115',
+            'nosleeve2': 'NoSleeve/TNNC_Top229/TNNC_Top229',
+            'nosleeve3': 'NoSleeve/DLNS_Dress016/DLNS_Dress016',
+            'shortsleeve1': 'ShortSleeve/TNSC_089/TNSC_089',
+            'shortsleeve2': 'ShortSleeve/TNSC_model2_076/TNSC_model2_076',
+            'shortsleeve3': 'ShortSleeve/TNSC_Top511/TNSC_Top511',
+            'longsleeve1': 'LongSleeve/TCLC_023/TCLC_023',
+            'longsleeve2': 'LongSleeve/TCLC_Top073/TCLC_Top073',
+            'longsleeve3': 'LongSleeve/TNLC_shirt2/TNLC_shirt2',
+            'pants1': 'Pants/PL_028/PL_028',
+            'pants2': 'Pants/PL_032/PL_032',
+            'pants3': 'Pants/PS_009/PS_009'
+          };
+          
+          const garmentPath = garmentMapping[garmentId];
+          
+          if (viewer && garmentPath) {
+            viewer.src = `static/data/${garmentPath}_action${action}/frame_${paddedFrame}.glb`;
+          }
+        }
+
+        // Handle frame slider changes
+        document.addEventListener('input', function(e) {
+          if (e.target.classList.contains('frame-slider')) {
+            const garmentId = e.target.getAttribute('data-garment');
+            const frame = e.target.value;
+            const paddedFrame = frame.toString().padStart(2, '0');
+            
+            // Update frame display
+            const frameDisplay = e.target.nextElementSibling;
+            frameDisplay.textContent = `${paddedFrame}/20`;
+            
+            // Get current action for this garment type
+            const garmentType = garmentId.replace(/\d+$/, '');
+            const actionSelector = document.querySelector(`select[data-garment-type="${garmentType}"]`);
+            const currentAction = actionSelector ? actionSelector.value : '0';
+            
+            // Update the viewer
+            updateIndividualViewer(garmentId, frame, currentAction);
+          }
+        });
+
+        // Handle action selector changes
+        document.addEventListener('change', function(e) {
+          if (e.target.classList.contains('action-selector')) {
+            const garmentType = e.target.getAttribute('data-garment-type');
+            const newAction = e.target.value;
+            
+            // Update all viewers of this garment type and reset frames to 00
+            for (let i = 1; i <= 3; i++) {
+              const garmentId = `${garmentType}${i}`;
+              const frameSlider = document.querySelector(`input[data-garment="${garmentId}"]`);
+              const frameDisplay = frameSlider ? frameSlider.nextElementSibling : null;
+              
+              // Reset frame slider to 0 and update display
+              if (frameSlider) {
+                frameSlider.value = 0;
+              }
+              if (frameDisplay) {
+                frameDisplay.textContent = '00/20';
+              }
+              
+              // Update the viewer with frame 0
+              updateIndividualViewer(garmentId, 0, newAction);
+            }
+          }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+          // Initialize all frame displays
+          document.querySelectorAll('.frame-slider').forEach(slider => {
+            const frameDisplay = slider.nextElementSibling;
+            frameDisplay.textContent = '00/20';
+          });
+        });
+      </script>
     </section>
 
     <!-- BibTex -->
