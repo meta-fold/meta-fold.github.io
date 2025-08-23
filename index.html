@@ -199,6 +199,15 @@
         <div class="columns is-centered">
           <div class="column">
             <h2 class="title is-3 has-text-centered">MetaFold Dataset Visualization</h2>
+            <!-- Auto-play toggle -->
+            <div class="has-text-centered" style="margin-bottom: 5px;">
+              <label style="font-size: 18px; font-weight: bold; margin-right: 15px;">Auto Play:</label>
+              <label class="switch" style="position: relative; display: inline-block; width: 60px; height: 34px;">
+                <input type="checkbox" id="autoPlayToggle" style="opacity: 0; width: 0; height: 0;">
+                <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px;"></span>
+                <span style="position: absolute; cursor: pointer; content: ''; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -449,14 +458,101 @@
           }
         });
 
-        // Initialize on page load
+        // Auto-play variables
+        let autoPlayInterval = null;
+        let isAutoPlaying = false;
+
+        // Auto-play functionality
+        function startAutoPlay() {
+          if (autoPlayInterval) return; // Already running
+          
+          autoPlayInterval = setInterval(() => {
+            document.querySelectorAll('.frame-slider').forEach(slider => {
+              let currentValue = parseInt(slider.value);
+              let nextValue = currentValue + 1;
+              
+              // Reset to 0 if we've reached the end
+              if (nextValue > 20) {
+                nextValue = 0;
+              }
+              
+              // Update slider value
+              slider.value = nextValue;
+              
+              // Trigger the input event to update the viewer
+              const event = new Event('input', { bubbles: true });
+              slider.dispatchEvent(event);
+            });
+          }, 300); // Change frame every 300ms
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+          }
+        }
+
+        // Toggle switch styling and functionality
         document.addEventListener('DOMContentLoaded', function() {
+          // Add CSS for toggle switch
+          const style = document.createElement('style');
+          style.textContent = `
+            input:checked + span {
+              background-color: #4ECDC4 !important;
+            }
+            input:checked + span + span {
+              transform: translateX(26px) !important;
+            }
+          `;
+          document.head.appendChild(style);
+
           // Initialize all frame displays
           document.querySelectorAll('.frame-slider').forEach(slider => {
             const frameDisplay = slider.nextElementSibling;
             frameDisplay.textContent = '00/20';
           });
+
+          // Auto-play toggle event listener
+          const autoPlayToggle = document.getElementById('autoPlayToggle');
+          autoPlayToggle.addEventListener('change', function() {
+            isAutoPlaying = this.checked;
+            if (isAutoPlaying) {
+              startAutoPlay();
+            } else {
+              stopAutoPlay();
+            }
+          });
         });
+
+        // BibTeX section
+        const bibtexSection = document.getElementById('BibTeX');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Load BibTeX content
+              bibtexSection.innerHTML = `
+                <div class="container is-max-desktop">
+                  <h2 class="title is-3">BibTeX</h2>
+                  <pre><code>@misc{chen2025metafoldlanguageguidedmulticategorygarment,
+  title={MetaFold: Language-Guided Multi-Category Garment Folding Framework via Trajectory Generation and Foundation Model}, 
+  author={Haonan Chen and Junxiao Li and Ruihai Wu and Yiwei Liu and Yiwen Hou and Zhixuan Xu and Jingxiang Guo and Chongkai Gao and Zhenyu Wei and Shensi Xu and Jiaqi Huang and Lin Shao},
+  year={2025},
+  eprint={2503.08372},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2503.08372}, 
+}</code></pre>
+                </div>
+              `;
+              
+              // Unobserve after loading
+              observer.unobserve(bibtexSection);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(bibtexSection);
       </script>
     </section>
 
@@ -474,7 +570,6 @@
   url={https://arxiv.org/abs/2503.08372}, 
 }</code></pre>
       </div>
-      
     </section>
     <!--/ BibTex -->
 
